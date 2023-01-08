@@ -68,9 +68,16 @@ $(function() {
                     })
                     .then(data => {
                         $('.related__movies').empty()
-                        data.related_movies.forEach(movie => {
-                            appendMovies(movie, '.related__movies')
-                        })
+
+                        console.log(data.related_movies.length)
+
+                        if (data.related_movies.length == 0) {
+                            $('.details__related').hide()
+                        } else {
+                            data.related_movies.forEach(movie => {
+                                appendMovies(movie, '.related__movies')
+                            })
+                        }
                     })
                     .catch(error => {
                         $('.main').text(error)
