@@ -139,6 +139,10 @@ p, h1, h2, h3, h4, h5, h6 {
     background-position: center;
 }
 
+.details__back-button {
+    margin: 2rem 0 0 2rem;
+}
+
 .details__info {
     display: flex;
     flex-direction: column;

@@ -11,6 +11,11 @@ $(function() {
     let today = new Date
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
+    $('.details__back-button').on('click', () => {
+        $('.main').show()
+        $('.details').addClass('display-none')
+    })
+
     const appendMovies = (movie, element) => {
         let releaseDate = new Date(movie.release_date)
         let container = $('<div>').addClass('movie')
@@ -37,7 +42,7 @@ $(function() {
             })
             .then(data => {
 
-                $('.main').addClass('display-none')
+                $('.main').hide()
 
                 $('.details__image').css('background-image', 'url(' + TMDB_API_IMAGE_ADRESS + data.backdrop_path + ')')
                 $('.details__title').text(data.title)
