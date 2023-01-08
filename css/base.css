@@ -262,3 +262,26 @@ p, h1, h2, h3, h4, h5, h6 {
     stroke-dashoffset: 157px;
     transform: rotate(-90deg);
 }
+
+@media screen and (max-width: 832px) {
+
+    .details {
+        grid-template-columns: 100%;
+        grid-template-rows: 40vh 1fr;
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+
+    .details__info {
+        padding: 2rem;
+    }
+
+    .details__meta {
+        justify-content: space-between;
+        gap: 1rem;
+        width: 100%;
+    }
+
+}

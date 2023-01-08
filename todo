@@ -5,8 +5,7 @@
 [x] add release date to "coming soon"
 [] fix so that text is the only thing scrollable
 [] fix zindex issue with score and menu
-[] button to go back from details
-[] add tag line?
+[x] button to go back from details
 [] responsive
 [] about page
 [] loading screen (if there's time)

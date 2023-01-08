@@ -69,8 +69,6 @@ $(function() {
                     .then(data => {
                         $('.related__movies').empty()
 
-                        console.log(data.related_movies.length)
-
                         if (data.related_movies.length == 0) {
                             $('.details__related').hide()
                         } else {
