@@ -1,0 +1,25 @@
+:root {
+
+    /* --grid-container: minmax(2rem, 1fr) minmax(0, 76rem) minmax(2rem, 1fr);
+    --grid-container-inner: repeat(3, 1fr); */
+
+    --color-primary: #1A1A1C;
+    --color-primary-500: #6F6F77;
+    --color-secondary: #FFF;
+    --color-secondary-90: #FFFFFFE6;
+    --color-accent: #EC1D24;
+    
+    --font-primary: "Montserrat", sans-serif;
+    --font-base: 16px;
+    --font-scale: 1.25;
+    --font-size-0: calc(var(--font-base) / var(--font-scale));
+    --font-size-1: var(--font-base);
+    --font-size-2: calc(var(--font-size-1) * var(--font-scale));
+    --font-size-3: calc(var(--font-size-2) * var(--font-scale));
+    --font-size-4: calc(var(--font-size-3) * var(--font-scale));
+    --font-size-5: calc(var(--font-size-4) * var(--font-scale));
+    --font-size-6: calc(var(--font-size-5) * var(--font-scale));
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+}

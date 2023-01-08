@@ -1,0 +1,14 @@
+[x] error handling
+[x] fix images on details page
+[x] dont show score if there is none
+[x] related movies
+[x] add release date to "coming soon"
+[] fix so that text is the only thing scrollable
+[] fix zindex issue with score and menu
+[] button to go back from details
+[] add tag line?
+[] responsive
+[] about page
+[] loading screen (if there's time)
+[] save movies (if there's time)
+[] search (if there's time)

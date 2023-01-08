@@ -1,0 +1,118 @@
+.header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-inline: 3rem;
+    height: 5rem;
+    background-color: var(--color-secondary);
+}
+
+.header__menu-button {
+    z-index: 900;
+    position: relative;
+    width: 1.5rem;
+    height: 10px;
+}
+
+.header__menu-button::after,
+.header__menu-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.5rem;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--color-primary);
+}
+
+.header__menu-button::before {
+    top: unset;
+    bottom: 0;
+}
+
+.header__menu-button--clicked.header__menu-button::after {
+    top: 50%;
+    transform: rotate(45deg);
+}
+
+.header__menu-button--clicked.header__menu-button::before {
+    top: 50%;
+    transform: rotate(-45deg);
+}
+
+/* Menu */
+
+.nav {
+    position: fixed;
+    z-index: 800;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-secondary);
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu__item {
+    position: relative;
+    margin-bottom: -1rem;
+    font-size: 5rem;
+    font-weight: var(--font-weight-black);
+    text-transform: uppercase;
+}
+
+.menu__item--home::before {
+    content: 'no way';
+    font-size: var(--font-size-0);
+    position: absolute;
+    top: 12px;
+    left: 4px;
+    text-transform: lowercase;
+}
+
+.menu__item--active {
+    font-style: italic;
+}
+
+.menu__item--active.menu__item--home::before {
+    left: 12px;
+}
+
+.nav__footer {
+    position: absolute;
+    left: 2rem;
+    bottom: 1rem;
+}
+
+.copyright > div:last-of-type {
+    font-weight: var(--font-weight-regular);
+}
+
+/* Search bar */
+
+.search {
+    position: fixed;
+    inset: 80px 0 0;
+    padding-inline: 3rem;
+    background-color: var(--color-secondary-90);
+}
+
+.search__form {
+    display: flex;
+    gap: 1rem;
+    border-bottom: solid 1px var(--color-primary);
+    background-color: var(--color-secondary);
+}
+
+.search__input {
+    flex: 1 0 auto;
+    border: none;
+    outline: none;
+}
