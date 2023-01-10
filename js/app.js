@@ -88,6 +88,7 @@ $(function() {
 
                 if (releaseDate > today) {
                     $('.details__release-date').text('Releases ' +  months[releaseDate.getMonth()]  + ' ' + releaseDate.getDate() + ', ' + releaseDate.getFullYear())
+                    $('.details__release').show()
                 } else {
                     $('.details__release').hide()
                 }
@@ -135,6 +136,7 @@ $(function() {
     
                     let ratingOffset = Math.round((157 / rating) * 10) / 10
                     $('.rating-circle svg').css('stroke-dashoffset', ratingOffset + 'px')
+                    $('.details__rating').show()
                 } else {
                     $('.details__rating').hide()
                 }

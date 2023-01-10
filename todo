@@ -7,9 +7,9 @@
 [x] fix zindex issue with score and menu
 [x] button to go back from details
 [x] responsive
-[] save movies
+[x] save movies
 [] fix score dissapering if previous movie hasn't come out yet
-[] fix "added to list" if you click on related movie
+[x] fix "added to list" if you click on related movie
 [] fix details mobile view
 [] about page
 [] loading screen
