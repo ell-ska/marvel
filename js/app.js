@@ -11,16 +11,24 @@ $(function() {
     let today = new Date
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-    $('.details__back-button').on('click', () => {
-        $('.main').show()
-        $('.details').addClass('display-none')
-    })
-
-    const appendMovies = (movie, element) => {
+    const appendMovies = (movie, element, id) => {
         let releaseDate = new Date(movie.release_date)
         let container = $('<div>').addClass('movie')
 
-        container.append($('<img>').attr('src', movie.cover_url))
+        if (document.location.pathname === '/saved.html') {
+            let imgContainer = $('<div>').addClass('movie__img')
+            imgContainer.append($('<img>').attr('src', movie.cover_url))
+
+            let button = $('<button>')
+            button.append($('<img>').attr({'src': '../assets/icons/close-white.svg', 'data-id': id}))
+            button.on('click', unsaveMovie)
+
+            imgContainer.append(button)
+            container.append(imgContainer)
+        } else {
+            container.append($('<img>').attr('src', movie.cover_url))
+        }
+
         container.append($('<h3>').text(movie.title))
         container.append($('<span>').text(releaseDate.getFullYear()))
 
@@ -29,6 +37,37 @@ $(function() {
         })
 
         $(element).append(container)
+    }
+
+    const unsaveMovie = (e) => {
+        e.stopPropagation()
+        let savedMovies = JSON.parse(localStorage.getItem('savedMovies')) || []
+        let id = $(e.target).attr('data-id')
+
+        let index = savedMovies.indexOf(id)
+        if (savedMovies.includes(id) && index >= 0) {
+            savedMovies.splice(index, 1)
+        }
+
+        localStorage.setItem('savedMovies', JSON.stringify(savedMovies))
+
+        if (document.location.pathname === '/saved.html') {
+            $(e.target).parents('.movie').remove()
+        }
+    }
+
+    const saveMovie = () => {
+        let savedMovies = JSON.parse(localStorage.getItem('savedMovies')) || []
+        let id = $('.details__title').attr('data-id')
+
+        if (!savedMovies.includes(id)) {
+            savedMovies.push(id)
+        }
+
+        localStorage.setItem('savedMovies', JSON.stringify(savedMovies))
+
+        $('.details__button span').text('Added to saved')
+        $('.details__button img').attr('src', 'assets/icons/check.svg')
     }
 
     const getMovieInfo = (imdbId, releaseDate, phase, chronology, desc, id) => {
@@ -45,7 +84,7 @@ $(function() {
                 $('.main').hide()
 
                 $('.details__image').css('background-image', 'url(' + TMDB_API_IMAGE_ADRESS + data.backdrop_path + ')')
-                $('.details__title').text(data.title)
+                $('.details__title').text(data.title).attr('data-id', id)
 
                 if (releaseDate > today) {
                     $('.details__release-date').text('Releases ' +  months[releaseDate.getMonth()]  + ' ' + releaseDate.getDate() + ', ' + releaseDate.getFullYear())
@@ -81,6 +120,15 @@ $(function() {
                         $('.main').text(error)
                     })
 
+                let savedMovies = JSON.parse(localStorage.getItem('savedMovies')) || []
+                if (savedMovies.includes(id.toString())) {
+                    $('.details__button span').text('Added to saved')
+                    $('.details__button img').attr('src', 'assets/icons/check.svg')
+                } else {
+                    $('.details__button span').text('Add to saved')
+                    $('.details__button img').attr('src', 'assets/icons/cross.svg')
+                }
+
                 if (data.vote_average > 0) {
                     let rating = Math.round(data.vote_average * 10) / 10
                     $('.rating-number').text(rating)
@@ -108,6 +156,8 @@ $(function() {
                 }
             })
             .then(data => {
+                
+                let savedMovies = JSON.parse(localStorage.getItem('savedMovies')) || []
 
                 data.data.forEach(movie => {
                     let releaseDate = new Date(movie.release_date)
@@ -123,12 +173,29 @@ $(function() {
                     } else if (movie.phase === 4) {
                         appendMovies(movie, '.phase-four .section__movies')
                     }
+
+                    if (savedMovies.length > 0) {
+                        savedMovies.forEach(savedMovie => {
+                            if (savedMovie == movie.id) {
+                                appendMovies(movie, '.saved .section__movies', movie.id)
+                            }
+                        })
+                    } else {
+                        $('.saved .section__message').text("You haven't saved any movies yet!")
+                    }
                 });
             })
             .catch(error => {
                 $('.main').text(error)
             })
     }
+
+    $('.details__back-button').on('click', () => {
+        $('.main').show()
+        $('.details').addClass('display-none')
+    })
+
+    $('.details__button').on('click', saveMovie)
 
     getMarvelMovies()
 

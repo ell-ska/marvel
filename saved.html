@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/saved.css">
     <link rel="stylesheet" href="css/details.css">
     <script src="js/jquery-3.6.3.min.js"></script>
     <script src="js/app.js"></script>
@@ -44,15 +44,68 @@
                 <form class="search__form">
                     <input type="text" class="search__input">
                     <button class="search__close-button">
-                        <img src="assets/icons/search-close.svg" alt="">
+                        <img src="assets/icons/close-black.svg" alt="">
                     </button>
                 </form>
             </div>
         </header>
 
         <main class="main">
-            <div>Coming soon</div>
+            <section class="section saved">
+                <h2 class="section__title">Saved movies</h2>
+                <div class="section__message"></div>
+                <div class="section__movies">
+                </div>
+            </section>
         </main>
+
+        <section class="details display-none">
+            <div class="details__image">
+                <button class="details__back-button">
+                    <img src="assets/icons/arrow-left.svg" alt="">
+                </button>
+            </div>
+            <div class="details__info">
+                <h2 class="details__title"></h2>
+                <div class="details__release">
+                    <div>Coming soon</div>
+                    <div class="details__release-date"></div>
+                </div>
+                <div class="details__meta">
+                    <div class="meta__group">
+                        <div class="meta__title">Year</div>
+                        <div class="meta__detail meta__year"></div>
+                    </div>
+                    <div class="meta__group">
+                        <div class="meta__title">Phase</div>
+                        <div class="meta__detail meta__phase"></div>
+                    </div>
+                    <div class="meta__group">
+                        <div class="meta__title">Chronology</div>
+                        <div class="meta__detail meta__chronology"></div>
+                    </div>
+                </div>
+                <p class="details__desc"></p>
+                <div class="details__related">
+                    <h2 class="related__title">Related movies</h2>
+                    <div class="related__movies"></div>
+                </div>
+                <div class="details__footer">
+                    <button class="details__button">
+                        <span>Add to saved</span>
+                        <img src="assets/icons/cross.svg" alt="">
+                    </button>
+                    <div class="details__rating">
+                        <div class="rating-circle">
+                            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="26" cy="26" r="25" stroke="#1A1A1C" stroke-width="2" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="rating-number"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </div>
 </body>

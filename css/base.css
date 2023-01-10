@@ -84,3 +84,73 @@ p, h1, h2, h3, h4, h5, h6 {
     /* To stop overriding problems */
     display: none !important;
 }
+
+/* Main movie display */
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin: calc(80px + 1.5rem) 2rem 2rem;
+}
+
+.section__title {
+    margin-bottom: 1rem;
+}
+
+.section__movies {
+    display: flex;
+    gap: 4rem;
+    overflow-y: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.movie {
+    max-width: 257px;
+    flex: 1 0 auto;
+    scroll-snap-align: start;
+}
+
+.movie__img {
+    position: relative;
+}
+
+.movie img {
+    border-radius: 1rem;
+}
+
+.movie__img button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.movie__img button img {
+    width: 18px;
+}
+
+.movie h3 {
+    margin-top: 1rem;
+    font-size: var(--font-size-1);
+}
+
+.movie span {
+    font-size: var(--font-size-1);
+    font-weight: var(--font-weight-regular);
+}
+
+@media screen and (max-width: 425px) {
+
+    .main {
+        gap: 2rem;
+        margin-inline: 2rem;
+    }
+
+    .section__movies {
+        gap: 2rem;
+    }
+
+    .movie {
+        max-width: 12rem;
+    }
+
+}

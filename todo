@@ -3,11 +3,15 @@
 [x] dont show score if there is none
 [x] related movies
 [x] add release date to "coming soon"
-[] fix so that text is the only thing scrollable
-[] fix zindex issue with score and menu
+[x] fix so that text is the only thing scrollable
+[x] fix zindex issue with score and menu
 [x] button to go back from details
-[] responsive
+[x] responsive
+[] save movies
+[] fix score dissapering if previous movie hasn't come out yet
+[] fix "added to list" if you click on related movie
+[] fix details mobile view
 [] about page
-[] loading screen (if there's time)
-[] save movies (if there's time)
-[] search (if there's time)
+[] loading screen
+[] search
+[] style error
