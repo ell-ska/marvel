@@ -108,6 +108,7 @@ p, h1, h2, h3, h4, h5, h6 {
     max-width: 257px;
     flex: 1 0 auto;
     scroll-snap-align: start;
+    cursor: pointer;
 }
 
 .movie__img {

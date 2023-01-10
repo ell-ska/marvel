@@ -15,7 +15,7 @@ $(function() {
         let releaseDate = new Date(movie.release_date)
         let container = $('<div>').addClass('movie')
 
-        if (document.location.pathname === '/saved.html') {
+        if (document.location.pathname === '/saved.html' && element != '.related__movies') {
             let imgContainer = $('<div>').addClass('movie__img')
             imgContainer.append($('<img>').attr('src', movie.cover_url))
 
