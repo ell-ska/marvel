@@ -20,7 +20,7 @@ $(function() {
             imgContainer.append($('<img>').attr('src', movie.cover_url))
 
             let button = $('<button>')
-            button.append($('<img>').attr({'src': '../assets/icons/close-white.svg', 'data-id': id}))
+            button.append($('<img>').attr({'src': 'assets/icons/close-white.svg', 'data-id': id}))
             button.on('click', unsaveMovie)
 
             imgContainer.append(button)
