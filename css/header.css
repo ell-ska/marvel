@@ -43,6 +43,11 @@
     transform: rotate(-45deg);
 }
 
+.header__search-button {
+    opacity: 0;
+    cursor: default;
+}
+
 /* Menu */
 
 .nav {

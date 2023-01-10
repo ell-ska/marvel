@@ -150,6 +150,7 @@
 
     .details__info {
         padding: 2rem;
+        height: auto;
     }
 
     .details__meta {

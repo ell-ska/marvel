@@ -33,6 +33,7 @@ $(function() {
         container.append($('<span>').text(releaseDate.getFullYear()))
 
         container.on('click', () => {
+            window.scrollTo(0, 0)
             getMovieInfo(movie.imdb_id, releaseDate, movie.phase, movie.chronology, movie.overview, movie.id)
         })
 
