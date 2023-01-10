@@ -52,7 +52,7 @@ $(function() {
 
         localStorage.setItem('savedMovies', JSON.stringify(savedMovies))
 
-        if (document.location.pathname === '/saved.html') {
+        if (document.location.pathname.includes('/saved.html')) {
             $(e.target).parents('.movie').remove()
         }
     }
