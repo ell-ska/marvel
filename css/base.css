@@ -120,6 +120,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .movie__img button {
+    z-index: 500;
     position: absolute;
     top: 1rem;
     right: 1rem;
