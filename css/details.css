@@ -2,7 +2,6 @@
     display: grid;
     grid-template-columns: 50% 50%;
     margin-top: 80px;
-    min-height: calc(100vh - 80px);
 }
 
 .details__image {
@@ -15,10 +14,12 @@
 }
 
 .details__info {
+    height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
     padding: 3rem;
     gap: 2rem;
+    overflow-y: scroll;
 }
 
 .details__title {

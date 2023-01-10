@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel app</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/details.css">
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/search.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <button class="header__menu-button"></button>
+            <nav class="nav display-none">
+                <div class="menu">
+                    <div class="menu__item menu__item--home"><a href="index.html" class="menu__link">Home</a></div>
+                    <div class="menu__item"><a href="saved.html" class="menu__link">Saved</a></div>
+                    <div class="menu__item menu__item--active"><a href="about.html" class="menu__link">About</a></div>
+                </div>
+                <div class="nav__footer">
+                    <div class="copyright">
+                        <div>&copy; ellska 2023</div>
+                        <div>Data and images owned by Marvel.</div>
+                    </div>
+                </div>
+            </nav>
+            <div class="header__branding">
+                <a class ="header__link" href="index.html">
+                    <img src="assets/icons/logo.svg" alt="Marvel logo">
+                </a>
+            </div>
+            <button class="header__search-button">
+                <img src="assets/icons/search.svg" alt="">
+            </button>
+            <div class="search display-none">
+                <form class="search__form">
+                    <input type="text" class="search__input">
+                    <button class="search__close-button">
+                        <img src="assets/icons/search-close.svg" alt="">
+                    </button>
+                </form>
+            </div>
+        </header>
+
+        <main class="main">
+            <div>Coming soon</div>
+        </main>
+
+    </div>
+</body>
+</html>
