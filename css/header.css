@@ -43,6 +43,7 @@
     transform: rotate(-45deg);
 }
 
+/* TEMP */
 .header__search-button {
     opacity: 0;
     cursor: default;

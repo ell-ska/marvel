@@ -1,0 +1,10 @@
+.main {
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+}
+
+.main div {
+    font-size: var(--font-size-4);
+}
