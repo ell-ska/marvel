@@ -126,3 +126,18 @@
     border: none;
     outline: none;
 }
+
+@media screen and (max-width: 425px) {
+    .header {
+        padding-inline: 2rem;
+    }
+
+    .search__form {
+        padding: 0 2rem 4px 2rem;
+    }
+
+    .search__form::after {
+        left: 2rem;
+        width: calc(100% - 4rem);
+    }
+}

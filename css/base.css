@@ -83,25 +83,19 @@ p, h1, h2, h3, h4, h5, h6 {
 /* Main */
 
 .main {
-    margin-top: 80px;
-}
-
-.section {
-    margin-top: 4rem;
-}
-
-.section:last-of-type {
-    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin: calc(80px + 1.5rem) 2rem 2rem;
 }
 
 .section__title {
-    margin: 1.5rem 3rem 1rem;
+    margin-bottom: 1rem;
 }
 
 .section__movies {
     display: flex;
     gap: 4rem;
-    margin-inline: 3rem;
     overflow-y: scroll;
     scroll-snap-type: x mandatory;
 }
@@ -273,6 +267,19 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 @media screen and (max-width: 425px) {
+
+    .main {
+        gap: 2rem;
+        margin-inline: 2rem;
+    }
+
+    .section__movies {
+        gap: 2rem;
+    }
+
+    .movie {
+        max-width: 12rem;
+    }
 
     .details__info {
         padding: 2rem;
