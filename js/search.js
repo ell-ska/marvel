@@ -1,5 +1,6 @@
 // The search feature isn't done yet and will be implemented later on
 
+
 // $(function() {
 //     $('.header__search-button').on('click', () => {
 //         $('.search').toggleClass('display-none')
