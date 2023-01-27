@@ -1,0 +1,66 @@
+.loader {
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-secondary);
+    transition: opacity .3s;
+}
+
+.loader--finished {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader__image {
+    position: relative;
+    width: 130px;
+    height: 52px;
+}
+
+.loader__background {
+    width: 36px;
+    height: 100%;
+    background-color: var(--color-accent);
+    animation: background 1.5s ease .5s forwards;
+}
+
+@keyframes background {
+    from {
+        width: 36px;
+    } to {
+        width: 100%;
+    }
+}
+
+.loader__word {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.loader__word #word {
+    transform: translateX(-100%);
+    animation: word 1.5s ease .5s forwards;
+}
+
+@keyframes word {
+    from {
+        transform: translateX(-100%);
+    } to {
+        transform: translateX(0);
+    }
+}
+
+.loader__word #letter {
+    animation: letter .5s ease .5s forwards;
+}
+
+@keyframes letter {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
