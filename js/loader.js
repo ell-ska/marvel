@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
-    const loader = document.querySelector('.loader')
+    const loader = document.querySelector('.loader');
     setTimeout(() => {
-        loader.classList.add('loader--finished')
-    }, 2000)
-})
+        loader.classList.add('loader--finished');
+    }, 2000);
+});
